@@ -1,0 +1,33 @@
+# Reference hyperparameters (the Colab notebook currently inlines these; edit
+# there or wire this file in). Kept for reproducibility / documentation.
+
+dev:
+  model_name: unsloth/Qwen2.5-3B-Instruct-bnb-4bit
+  max_seq_len: 1024
+  batch: 2
+  grad_accum: 4
+
+prod:
+  model_name: unsloth/Qwen2.5-Math-7B-Instruct-bnb-4bit
+  max_seq_len: 1024        # 2048 on L4 if proofs truncate
+  batch: 1
+  grad_accum: 4
+
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+optim:
+  lr_l4: 2.0e-4            # bf16
+  lr_t4: 1.0e-4            # fp16, more conservative (risk #13)
+  epochs: 3
+  warmup_ratio: 0.03
+  max_grad_norm: 0.3
+  scheduler: cosine
+  optimizer: paged_adamw_8bit
+
+eval:
+  tau: 0.5                 # confidence threshold defining "confident" (PRD §5.6)
+  test_frac: 0.2

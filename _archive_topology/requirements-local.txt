@@ -1,0 +1,7 @@
+# Local machine: data generation, probe, and evaluation (no GPU needed).
+# Install:  pip install -r requirements-local.txt
+anthropic>=0.40.0
+openai>=1.40.0
+numpy>=1.26
+matplotlib>=3.8
+pyyaml>=6.0

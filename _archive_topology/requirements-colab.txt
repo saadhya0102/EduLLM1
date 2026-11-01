@@ -1,0 +1,11 @@
+# Colab training environment. The notebook installs Unsloth (which pins
+# compatible transformers/peft/trl/bitsandbytes) — this file documents the set
+# for reference / non-Unsloth fallback. Prefer the notebook's install cell.
+#   pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+transformers>=4.44
+peft>=0.12
+trl<0.9.0
+accelerate>=0.33
+bitsandbytes>=0.43
+datasets>=2.20
+wandb>=0.17

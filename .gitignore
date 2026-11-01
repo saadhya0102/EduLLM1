@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated data, model outputs, downloads
+data/*.jsonl
+data/*.json
+data/*.csv
+data/*.png
+data/brazil8k_raw/
+out/
+checkpoints/
+models/
+runs/
+results/brazil8k/
+results/brazil1p5b_1k/
+results/brazil1p5b_2k/
+
+# Secrets / local settings
+.env
+.claude/settings.local.json
+
+# Local configuration and private/generated data stay out of publication.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+node_modules/
+.cursor/
+.claude/
+.codex/
+.aws/
+.firebase/
+.wrangler/
+*.log
+*.pem
+*.pfx
+*.p12
+*.jks
+*.keystore
+.venv/
+__pycache__/

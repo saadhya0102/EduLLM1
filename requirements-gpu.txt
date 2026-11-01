@@ -1,0 +1,7 @@
+# GPU box (WSL2 on the RTX 4070): training + HF inference
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements-gpu.txt
+transformers>=4.44
+peft>=0.12
+accelerate>=0.33
+bitsandbytes>=0.43   # only if using --load-4bit
